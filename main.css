@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Starborn';
+    src: url(/assets/fonts/Starborn.otf);
+}
+
+@font-face {
+    font-family: 'Jua';
+    src: url(/assets/fonts/Jua-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Candybeans';
+    src: url(/assets/fonts/Candy\ Beans.otf);
+}
+
+body {
+    font-family: 'Quicksand';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: rgb(238,201,255);
+    background: -moz-radial-gradient(circle, rgba(238,201,255,1) 0%, rgba(148,187,233,1) 94%);
+    background: -webkit-radial-gradient(circle, rgba(238,201,255,1) 0%, rgba(148,187,233,1) 94%);
+    background: radial-gradient(circle, rgba(238,201,255,1) 0%, rgba(148,187,233,1) 94%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eec9ff",endColorstr="#94bbe9",GradientType=1);
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#play-btn{
+    background-color: transparent;
+    border: none;
+}
+
+button i{
+    font-size: large;
+    cursor: pointer;;
+}
+
+button i:hover{
+    color: rgb(154, 154, 194);
+}
+
+#submit-btn{
+    background-color: transparent;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#submit-btn:hover{
+    background-color: rgba(128, 128, 128, 0.301);
+}
+h2{
+    font-family: 'Starborn';
+}
+
+#game-container {
+    display: none;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#image-container img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#answer-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#final-score{
+    display: flex;
+    border: none;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#play-again{
+    background-color: transparent;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    font-family: Jua;
+}
+
+#play-again i{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+#play-again i:hover{
+    color: rgb(154, 154, 194);
+}
+
+
+
+h3{
+    font-family: 'Candybeans';
+}
+#score, #timer {
+    font-size: 18px;
+    margin-bottom: 20px;
+}

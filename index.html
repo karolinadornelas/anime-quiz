@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Jua&family=Quicksand:wght@300..700&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+    <title>anime quiz</title>
+
+</head>
+
+<body>
+    <container>
+        <header>
+            <h2>Anime Quiz</h2>
+            <button id="play-btn"><i class="fa-solid fa-play"></i></button>
+        </header>
+        <div id="game-container">
+            <div id="score">Pontuação: 0</div>
+            <div id="timer">Tempo: 40s</div>
+            <div id="image-container">
+                <img id="character-image" src="" alt="img quiz">
+            </div>
+            <input type="text" id="answer-input" placeholder="palpite">
+            <button id="submit-btn">enviar</button>
+        </div>
+
+        <div id="final-score" style="display:none;">
+            <h3>Pontuação: <span id="final-score-value"></span></h3>
+            <button id="play-again" onclick="location.reload()">Jogar Novamente <i class="fa-solid fa-play"></i></button>
+        </div>
+    </container>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

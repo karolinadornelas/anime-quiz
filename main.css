@@ -66,7 +66,7 @@ h2{
 #game-container {
     display: none;
     text-align: center;
-    background-color: #fff;
+    background-color: #ddd2f2;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -84,8 +84,9 @@ h2{
     font-size: 16px;
     width: 80%;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #bbb;
     border-radius: 5px;
+    background-color: transparent;
 }
 
 #final-score{
@@ -117,11 +118,26 @@ h2{
     color: rgb(154, 154, 194);
 }
 
-
-
 h3{
     font-family: 'Candybeans';
 }
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+.error {
+    border: 2px solid red;
+}
+
 #score, #timer {
     font-size: 18px;
     margin-bottom: 20px;

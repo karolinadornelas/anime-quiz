@@ -17,6 +17,7 @@ const timeSettings = [40, 40, 40, 30, 30, 15, 15, 15, 10, 10, 10, 10];
 let currentImageIndex = 0;
 let score = 0;
 let timer;
+let remainingTime;
 
 const scoreDisplay = document.getElementById('score');
 const timerDisplay = document.getElementById('timer');
@@ -32,7 +33,6 @@ function startGame() {
     gameContainer.style.display = 'block';
     playButton.style.display = 'none';
     loadNextImage();
-    startTimer(timeSettings[currentImageIndex]);
 }
 
 function loadNextImage() {
@@ -40,19 +40,21 @@ function loadNextImage() {
         imageElement.src = images[currentImageIndex].src;
         answerInput.value = '';
         submitButton.disabled = false;
+        remainingTime = timeSettings[currentImageIndex];
+        startTimer();
     } else {
         endGame();
     }
 }
 
-function startTimer(seconds) {
-    timerDisplay.textContent = `Tempo: ${seconds}s`;
+function startTimer() {
+    timerDisplay.textContent = `Tempo: ${remainingTime}s`;
     timer = setInterval(() => {
-        seconds--;
-        timerDisplay.textContent = `Tempo: ${seconds}s`;
-        if (seconds <= 0) {
+        remainingTime--;
+        timerDisplay.textContent = `Tempo: ${remainingTime}s`;
+        if (remainingTime <= 0) {
             clearInterval(timer);
-            validateAnswer();
+            nextImage();
         }
     }, 1000);
 }
@@ -60,21 +62,24 @@ function startTimer(seconds) {
 function validateAnswer() {
     const userAnswer = answerInput.value.trim().toLowerCase();
     const correctAnswer = images[currentImageIndex].name.toLowerCase();
-
-    submitButton.disabled = true;
-
-    if (userAnswer === correctAnswer) {
-        const points = currentImageIndex < 3 ? 10 : currentImageIndex < 5 ? 10 : currentImageIndex < 8 ? 15 : 20;
-        score += points;
-        scoreDisplay.textContent = `Pontuação: ${score}`;
-    } else {
-        alert(`nop`);
+        if (userAnswer === correctAnswer) {
+            const points = currentImageIndex < 3 ? 10 : currentImageIndex < 5 ? 10 : currentImageIndex < 8 ? 15 : 20;
+            score += points;
+            scoreDisplay.textContent = `Pontuação: ${score}`;
+            nextImage();
+        }else{
+            answerInput.classList.add('shake', 'error')
+            setTimeout(()=>{
+            answerInput.classList.remove('shake', 'error');
+            answerInput.value='';
+        },300);
     }
+}
 
+function nextImage() {
     clearInterval(timer);
     currentImageIndex++;
     loadNextImage();
-    startTimer(timeSettings[currentImageIndex]);
 }
 
 function endGame() {
